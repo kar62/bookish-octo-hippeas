@@ -104,4 +104,8 @@ def get_user(user_id):
     return jsonify({'error': 'User not found'}), 404
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Debug mode should be disabled in production
+    # Set FLASK_DEBUG=0 or remove debug parameter for production deployment
+    import os
+    debug_mode = os.environ.get('FLASK_DEBUG', '1') == '1'
+    app.run(debug=debug_mode, host='0.0.0.0', port=5000)

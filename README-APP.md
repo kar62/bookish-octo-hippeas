@@ -132,7 +132,13 @@ The application runs in debug mode by default during development. This enables:
 - Detailed error messages
 - Interactive debugger
 
-For production, set `debug=False` in `app.py`.
+To disable debug mode (recommended for production):
+```bash
+export FLASK_DEBUG=0
+python app.py
+```
+
+Or set the environment variable in your deployment configuration.
 
 ### CORS Configuration
 Cross-Origin Resource Sharing (CORS) is enabled to allow frontend-backend communication during development.
