@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>User Management System</h1>
+            <p class="subtitle">View and manage user information</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <button id="refreshBtn" class="btn btn-primary">
+                    <span class="icon">🔄</span> Refresh Users
+                </button>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search users...">
+                </div>
+            </div>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading users...</p>
+            </div>
+
+            <div id="error" class="error-message" style="display: none;">
+                <span class="icon">⚠️</span>
+                <span id="errorText"></span>
+            </div>
+
+            <div id="userList" class="user-grid">
+                <!-- User cards will be dynamically inserted here -->
+            </div>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <span class="icon">🔍</span>
+                <p>No users found matching your search.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 User Management System | Test Data Mode</p>
+            <p class="note">Note: Currently using test data. Will connect to Azure Cloud REST API when available.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
